@@ -13,10 +13,10 @@ export class AppComponent implements OnInit {
   public status: Status;
   private timer$: Subscription;
 
-  constructor(private timerService: TimerService){}
+  constructor(private timerService: TimerService) {}
 
   public ngOnInit(): void {
-    this.timer$ = this.timerService.getStaus().subscribe((status: Status) => {
+    this.timer$ = this.timerService.getStatus().subscribe((status: Status) => {
       this.status = status;
 
       if(status === Status.InValid) {
